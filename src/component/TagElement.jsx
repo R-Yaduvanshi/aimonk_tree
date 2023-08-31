@@ -63,18 +63,6 @@ const TagElement = ({ tag, onAddChild, onNameChange, onHandleCollapse }) => {
               </div>
             </>
           )}
-          {/* {tag.children === undefined && (
-            <div className="add-child">
-              <input
-                type="text"
-                placeholder="New Child Name"
-                value={newChildName}
-                onChange={(event) => setNewChildName(event.target.value)}
-              />
-              <button onClick={handleAddChild}>Add Child</button>
-            </div>
-          )} */}
-          <input type="text" />
         </>
       )}
     </div>

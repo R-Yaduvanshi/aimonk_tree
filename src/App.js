@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import TagElement from "./component/TagElement";
 import { useState } from "react";
-import { Button } from "@chakra-ui/react";
+import { Button, Text } from "@chakra-ui/react";
 
 const initialTree = {
   name: "Root",
@@ -46,7 +46,7 @@ function App() {
   };
   return (
     <div className="App">
-      <h1>Nested Tags Tree</h1>
+      <Text fontWeight={"extrabold"}>Nested Tags Tree</Text>
       <TagElement
         tag={tree}
         onAddChild={handleAddChild}
