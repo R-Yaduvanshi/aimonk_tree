@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import TagElement from "./component/TagElement";
 import { useState } from "react";
+import { Button } from "@chakra-ui/react";
 
 const initialTree = {
   name: "Root",
@@ -25,7 +26,7 @@ function App() {
     if (!parentTag.children) {
       parentTag.children = [];
     }
-    parentTag.children.push({ name: childName, collapsed: false });
+    parentTag.children.push({ name: childName, collapsed: true });
     setTree({ ...tree });
   };
 
@@ -41,7 +42,7 @@ function App() {
 
   const handleExport = () => {
     const exportedData = JSON.stringify(tree, ["name", "children", "data"], 2);
-    console.log(exportedData); // You can change this to set the data to a state for display on the UI.
+    console.log(exportedData); // we can change this to set the data to a state for display on the UI.
   };
   return (
     <div className="App">
@@ -52,7 +53,7 @@ function App() {
         onNameChange={handleNameChange}
         onHandleCollapse={handleCollapseToggle}
       />
-      <button onClick={handleExport}>Export</button>
+      <Button onClick={handleExport}>Export</Button>
     </div>
   );
 }

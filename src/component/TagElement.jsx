@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import AddChildModal from "./AddChildModal";
+import { useDisclosure, useToast } from "@chakra-ui/react";
 
 const TagElement = ({ tag, onAddChild, onNameChange, onHandleCollapse }) => {
+  const toast = useToast();
   const [newChildName, setNewChildName] = useState("");
 
   const handleNameChange = (event) => {
@@ -10,6 +13,15 @@ const TagElement = ({ tag, onAddChild, onNameChange, onHandleCollapse }) => {
   const handleAddChild = () => {
     onAddChild(tag, newChildName);
     setNewChildName("");
+    toast({
+      title: "Child Added",
+      description: "you have successfully added your child name",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+      position: "top-right",
+    });
+    // console.log(newChildName);
   };
 
   const collapsedFun = () => {
@@ -18,8 +30,14 @@ const TagElement = ({ tag, onAddChild, onNameChange, onHandleCollapse }) => {
   return (
     <div className="tag">
       <div className="tag-header">
-        <button onClick={collapsedFun}>{tag.collapsed ? ">" : "v"}</button>
-        <span>{tag.name}</span>
+        <div>
+          <button onClick={collapsedFun}>{tag.collapsed ? ">" : "v"}</button>
+          <span>{tag.name}</span>
+        </div>
+        <AddChildModal
+          hanndleNewChild={handleAddChild}
+          handleInputAddChild={(e) => setNewChildName(e.target.value)}
+        />
       </div>
       {!tag.collapsed && (
         <>
@@ -34,9 +52,18 @@ const TagElement = ({ tag, onAddChild, onNameChange, onHandleCollapse }) => {
               />
             ))}
           {tag.data !== undefined && (
-            <input type="text" value={tag.data} onChange={handleNameChange} />
+            <>
+              <div className="data_div">
+                <p>Data</p>
+                <input
+                  type="text"
+                  value={tag.data}
+                  onChange={handleNameChange}
+                />
+              </div>
+            </>
           )}
-          {tag.children === undefined && (
+          {/* {tag.children === undefined && (
             <div className="add-child">
               <input
                 type="text"
@@ -46,7 +73,8 @@ const TagElement = ({ tag, onAddChild, onNameChange, onHandleCollapse }) => {
               />
               <button onClick={handleAddChild}>Add Child</button>
             </div>
-          )}
+          )} */}
+          <input type="text" />
         </>
       )}
     </div>
