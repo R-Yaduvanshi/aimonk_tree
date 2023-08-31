@@ -1,23 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import TagElement from "./component/TagElement";
+import { useState } from "react";
 
+const initialTree = {
+  name: "Root",
+  collapsed: true,
+  children: [
+    {
+      name: "child1",
+      collapsed: true,
+      children: [
+        { name: "child1-child1", data: "c1-c1 Hello", collapsed: true },
+        { name: "child1-child2", data: "c1-c2 JS", collapsed: true },
+      ],
+    },
+    { name: "child2", data: "c2 World", collapsed: true },
+  ],
+};
 function App() {
+  const [tree, setTree] = useState(initialTree);
+
+  const handleAddChild = (parentTag, childName) => {
+    if (!parentTag.children) {
+      parentTag.children = [];
+    }
+    parentTag.children.push({ name: childName, collapsed: false });
+    setTree({ ...tree });
+  };
+
+  const handleNameChange = (tag, newName) => {
+    tag.name = newName;
+    setTree({ ...tree });
+  };
+
+  const handleCollapseToggle = (tag) => {
+    tag.collapsed = !tag.collapsed;
+    setTree({ ...tree });
+  };
+
+  const handleExport = () => {
+    const exportedData = JSON.stringify(tree, ["name", "children", "data"], 2);
+    console.log(exportedData); // You can change this to set the data to a state for display on the UI.
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Nested Tags Tree</h1>
+      <TagElement
+        tag={tree}
+        onAddChild={handleAddChild}
+        onNameChange={handleNameChange}
+        onHandleCollapse={handleCollapseToggle}
+      />
+      <button onClick={handleExport}>Export</button>
     </div>
   );
 }
