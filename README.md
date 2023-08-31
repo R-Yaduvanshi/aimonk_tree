@@ -22,15 +22,13 @@
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
 </p>
 
-<h3 align="center"><a href="https://onito-assignment.vercel.app/"><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href="https://tag-tree-view.vercel.app/"><strong>Want to see live preview »</strong></a></h3>
 
 <br />
 
-<h3 align="center"><a href="https://onito-assignment-production.up.railway.app/"><strong>Want to see live preview »</strong></a></h3>
-
 <p align="center">
   <br />&#10023;
-  <a href="https://onito-assignment.vercel.app/">View Demo</a> &#10023;
+  <a href="https://tag-tree-view.vercel.app/">View Demo</a> &#10023;
   <a href="#Getting-Started">Getting Started</a> &#10023; 
   <a href="#Install">Installing</a> &#10023;
   <a href="#Contact">Author</a> &#10023;
@@ -41,23 +39,23 @@
 ## Screens 
 <br />
 
-## Glimpses of Task Form App
+## Glimpses of Tag Tree
 app 🙈 :
 <table>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/100795038/236612031-d9871add-7696-4422-84a9-b259fe67b5d5.png"   alt="home" /></td>
-    <td><img  src="https://user-images.githubusercontent.com/100795038/236612090-43df0b49-a76e-4971-8213-a41778a5b66e.png" alt="submit form" /></td>
+    <td><img src="https://github.com/R-Yaduvanshi/aimonk_tree/assets/100795038/ca1a2225-8392-499c-9595-6af2e445bc9d"   alt="home" /></td>
+    <td><img  src="https://github.com/R-Yaduvanshi/aimonk_tree/assets/100795038/90f76df3-3954-4c22-a181-b7fe9ea7f482" alt="submit form" /></td>
   </tr>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/100795038/236612135-a48cd59d-7bed-40b8-bf9c-a7b592bbf041.png"   alt="all users" /></td>
+    <td><img src="https://github.com/R-Yaduvanshi/aimonk_tree/assets/100795038/09bca790-d76f-418c-8f9a-8fd4813743d4"   alt="all users" /></td>
+    <td><img src="https://github.com/R-Yaduvanshi/aimonk_tree/assets/100795038/f6f036be-a651-41c0-a330-ab83ef3e468b"/></td>
   </tr>
 </table>
 
 <br />
-
 ## Getting Started
 
-This project was built using React,Redux,React-Redux, Redux-Thunk, BootStrap, HTML, CSS, JavaScript,Jquery, NodeJS, ExpressJS, Mongoose and MongoDB . It is a simple Task Form.
+This project was built using React, Chakra-UI, HTML, CSS, JavaScript. It is a simple frontend UI App.
 
 # Getting Started with Create React App
 
@@ -71,8 +69,6 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-Open [http://localhost:7000](http://localhost:7000) to run backend in your browser.
 
 ### `npm run build`
 
